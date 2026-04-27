@@ -136,12 +136,6 @@ func advance_month() -> void:
 
 
 
-	var industry = _get_industry()
-	if industry != null:
-		industry.process_month()
-		update_resoucre_box()
-		print("Ore: " + str(industry.get_resource("ore")))
-		_print_industries_by_planet(industry)
 
 	update_ui()
 
@@ -280,3 +274,39 @@ func _on_fleet_view_pressed():
 func _on_fuck_your_shit_inator_pressed():
 	GameData.reset_save()
 	pass # Replace with function body.
+
+
+func _on_planet_list_item_clicked(index, _at_position, _mouse_button_index):
+	var industry = _get_industry()
+	print(index)
+	var planet = PLANETS[index]
+	print(planet)
+	var planet_id = str(planet["id"])
+	var planet_name = str(planet["name"])
+	var buildings = industry.get_buildings()
+
+	print("Industry on " + planet_name + ":")
+
+	var found_any = false
+	for building_id in buildings:
+		var building = buildings[building_id]
+		var metadata = building.get("metadata", {})
+
+		if typeof(metadata) != TYPE_DICTIONARY:
+			continue
+
+		if str(metadata.get("planet_id", "")) != planet_id:
+			continue
+
+		var building_type = industry.get_building_type(str(building.get("type_id", "")))
+		var display_name = str(building_type.get("display_name", building.get("type_id", "")))
+		var count = int(building.get("count", 1))
+		var active = bool(building.get("active", true))
+
+		print("- " + display_name + " x" + str(count) + " active=" + str(active))
+		found_any = true
+
+	if not found_any:
+		print("- No industry")
+
+	pass 

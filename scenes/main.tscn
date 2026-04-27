@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2acpgnu3ccfq"]
+[gd_scene load_steps=7 format=3 uid="uid://c2acpgnu3ccfq"]
 
 [ext_resource type="Script" uid="uid://b8hu6saymrje5" path="res://Scripts/main.gd" id="1_o5qli"]
 [ext_resource type="FontFile" uid="uid://c2r3m6ngu5gvo" path="res://Assets/Eurostile Bold Oblique.otf" id="2_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://d2fo2ghivqncm" path="res://Assets/Sprite-0001.png" id="3_sugp2"]
+[ext_resource type="Texture2D" uid="uid://chfietfginiik" path="res://Assets/Sprite-0002.png" id="4_jyhfs"]
 
 [sub_resource type="Theme" id="Theme_sugp2"]
 default_font = ExtResource("2_0wfyh")
@@ -17,10 +18,9 @@ script = ExtResource("1_o5qli")
 position = Vector2(577, 320)
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -19.0
-offset_top = -4.0
-offset_right = 1184.0
-offset_bottom = 653.0
+offset_left = -11.0
+offset_right = 1192.0
+offset_bottom = 657.0
 color = Color(0.105882, 0.227451, 0.611765, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -131,6 +131,11 @@ offset_bottom = 214.0
 text = "Fuck Your Shit inator
 "
 
+[node name="Sprite-0002" type="Sprite2D" parent="UI/HUD"]
+position = Vector2(-2.5, 554)
+scale = Vector2(0.650391, 0.429688)
+texture = ExtResource("4_jyhfs")
+
 [node name="IndustryBuildPopup" type="PopupPanel" parent="UI"]
 title = "Build Industry"
 position = Vector2i(432, 251)
@@ -193,6 +198,7 @@ text = "Resources:"
 
 [connection signal="pressed" from="UI/HUD/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="UI/HUD/Speed1Button" to="." method="_on_speed_1_button_pressed"]
+[connection signal="item_clicked" from="UI/HUD/Planet List" to="." method="_on_planet_list_item_clicked"]
 [connection signal="pressed" from="UI/HUD/IndustryTest" to="." method="_on_industry_test_pressed"]
 [connection signal="pressed" from="UI/HUD/ResourceDisplay" to="." method="_on_resource_display_pressed"]
 [connection signal="pressed" from="UI/HUD/FleetView" to="." method="_on_fleet_view_pressed"]
