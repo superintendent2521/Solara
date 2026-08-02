@@ -1,0 +1,57 @@
+{
+  "hydroponics_farm": {
+    "id": "hydroponics_farm",
+    "name": "Hydroponics Farm",
+    "description": "Feeds the colony using water-efficient orbital cultivars.",
+    "construction_cost": {"credits": 110, "minerals": 25},
+    "monthly_input": {"energy": 4},
+    "monthly_output": {"food": 32},
+    "maintenance": 3,
+    "workers": 90,
+    "unlock": ""
+  },
+  "deep_core_mine": {
+    "id": "deep_core_mine",
+    "name": "Deep-Core Mine",
+    "description": "Extracts mineral feedstock from the region's deposits.",
+    "construction_cost": {"credits": 140, "minerals": 15},
+    "monthly_input": {"energy": 6},
+    "monthly_output": {"minerals": 22},
+    "maintenance": 5,
+    "workers": 120,
+    "unlock": ""
+  },
+  "fabrication_plant": {
+    "id": "fabrication_plant",
+    "name": "Fabrication Plant",
+    "description": "Turns mineral stock into consumer and machine goods.",
+    "construction_cost": {"credits": 210, "minerals": 40},
+    "monthly_input": {"energy": 8, "minerals": 10},
+    "monthly_output": {"goods": 13},
+    "maintenance": 8,
+    "workers": 160,
+    "unlock": ""
+  },
+  "fusion_array": {
+    "id": "fusion_array",
+    "name": "Fusion Array",
+    "description": "Provides dependable energy for all local industry.",
+    "construction_cost": {"credits": 180, "minerals": 35},
+    "monthly_input": {},
+    "monthly_output": {"energy": 38},
+    "maintenance": 7,
+    "workers": 70,
+    "unlock": ""
+  },
+  "research_campus": {
+    "id": "research_campus",
+    "name": "Research Campus",
+    "description": "Develops industrial techniques and logistics theory.",
+    "construction_cost": {"credits": 260, "minerals": 45},
+    "monthly_input": {"energy": 10, "goods": 2},
+    "monthly_output": {"research": 10},
+    "maintenance": 12,
+    "workers": 140,
+    "unlock": "industrial_methods"
+  }
+}
